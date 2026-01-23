@@ -1,38 +1,252 @@
-.App {
-  text-align: center;
+:root {
+  --primary-gradient: linear-gradient(90deg, #00ff88 0%, #00f2ff 100%);
+  --dark-bg: #121212;
+  --card-bg: #1e1e1e;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--dark-bg);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container { width: 90%; margin: auto; display: flex; justify-content: space-between; align-items: center; }
+
+/* Navbar */
+.navbar {
+  padding: 1.5rem 0;
+  background: rgba(0,0,0,0.9);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #333;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.logo-text { font-size: 1.5rem; font-weight: 800; letter-spacing: 2px; }
+.logo-text span { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+.nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+.nav-links a { text-decoration: none; color: white; font-size: 0.9rem; font-weight: 600; }
+
+.franchise-btn {
+  background: var(--primary-gradient);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Hero */
+.hero {
+  height: 70vh;
+  background: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1500&q=80') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  background: rgba(0,0,0,0.6);
+  padding: 3rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;   /* ✅ THIS FIXES BUTTON ALIGNMENT */
+}
+
+
+.hero h1 { font-size: 3.5rem; margin-bottom: 0.5rem; }
+
+/* Services */
+.services { padding: 5rem 5%; text-align: center; }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.service-card {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 15px;
+  transition: 0.3s;
+  border: 1px solid #333;
+}
+
+.service-card:hover {
+  border-color: #00f2ff;
+  transform: translateY(-5px);
+}
+
+.service-card h3 { margin: 1rem 0; color: #00f2ff; }
+
+.hero {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.neon-text {
+  font-size: 3.8rem;
+  color: #00f2ff;
+  text-shadow: 0 0 10px #00f2ff, 0 0 30px #00f2ff;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00f2ff; }
+  to { text-shadow: 0 0 40px #00f2ff; }
+}
+
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: black;
+    flex-direction: column;
+    padding: 2rem;
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav-links.open {
+    display: flex;
   }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+.pricing {
+  padding: 5rem 5%;
+  text-align: center;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.price-card {
+  padding: 2.5rem;
+  background: var(--card-bg);
+  border-radius: 15px;
+  font-size: 1.5rem;
+}
+
+.glow:hover {
+  box-shadow: 0 0 25px #00f2ff;
+}
+
+.cta-main {
+  margin-top: 1.5rem;
+  padding: 14px 30px;
+  background: var(--primary-gradient);
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.booking {
+  padding: 5rem 5%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ */
+}
+
+footer {
+  padding: 2rem;
+  text-align: center;     /* ✅ */
+  background: #0b0b0b;
+  border-top: 1px solid #222;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.service-card {
+  position: relative;
+  height: 220px;
+  border-radius: 18px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 35px rgba(0, 242, 255, 0.35);
+}
+
+.service-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.55)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.bg-gaming {
+  background-image: url("/public/images/pcgaming.jpg");
+}
+
+.bg-billiards {
+  background-image: url("/public/images/pool.jpg");
+}
+
+.bg-racing {
+  background-image: url("/public/images/racing.jpg");
+}
+
+.bg-cafe {
+  background-image: url("/public/images/cafe.jpg");
+}
+
+.service-card h3 {
+  color: #00f2ff;
+  margin-top: 0.6rem;
+  text-shadow: 0 0 10px rgba(0,242,255,0.6);
+}
+
+.bg-racing:hover {
+  background-position: center 20%;
 }
