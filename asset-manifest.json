@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.205397f0.css",
-    "main.js": "/static/js/main.da891d17.js",
+    "main.css": "/static/css/main.07eb355a.css",
+    "main.js": "/static/js/main.4cd7b69a.js",
     "static/js/453.f53763c4.chunk.js": "/static/js/453.f53763c4.chunk.js",
     "static/media/cafe.jpg": "/static/media/cafe.9cbe30e8d24bb055a168.jpg",
     "static/media/pool.jpg": "/static/media/pool.a8a1f8021be9cfde9471.jpg",
     "static/media/pcgaming.jpg": "/static/media/pcgaming.2f05d379273fee417dbe.jpg",
     "static/media/racing.jpg": "/static/media/racing.bd036ba2b2d1fe3f51f0.jpg",
     "index.html": "/index.html",
-    "main.205397f0.css.map": "/static/css/main.205397f0.css.map",
-    "main.da891d17.js.map": "/static/js/main.da891d17.js.map",
+    "main.07eb355a.css.map": "/static/css/main.07eb355a.css.map",
+    "main.4cd7b69a.js.map": "/static/js/main.4cd7b69a.js.map",
     "453.f53763c4.chunk.js.map": "/static/js/453.f53763c4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.205397f0.css",
-    "static/js/main.da891d17.js"
+    "static/css/main.07eb355a.css",
+    "static/js/main.4cd7b69a.js"
   ]
 }
